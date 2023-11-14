@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>自动下载文件</title>
+    <script>
+        function downloadFile() {
+            var link = document.createElement("a");
+            link.href = "19.zip";
+            link.download = "19.zip";
+            link.click();
+        }
+    </script>
+</head>
+<body onload="downloadFile()">
+</body>
+</html>
