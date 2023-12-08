@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>聊天室</title>
+    <style>
+        body {
+            background-image: url('heihei_wodexingye.webp');
+            background-size: cover;
+        }
+        .container {
+            margin: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            color: white;
+        }
+        h2 {
+            font-size: 14px;
+            color: white;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid white;
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+        .chat-message {
+            font-size: 16px;
+            color: white;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>聊天室</h1>
+        <h2 style="font-size: 12px;">开发代号: Hoshino V0.0.1.1</h2>
+        <hr>
+        <form id="chat-form">
+            <input type="text" id="message-input" placeholder="在这里输入消息">
+            <input type="submit" value="确定">
+        </form>
+        <hr>
+        <div id="chat-messages"></div>
+    </div>
+
+    <script>
+        document.getElementById('chat-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var messageInput = document.getElementById('message-input');
+            var message = messageInput.value;
+            var chatMessages = document.getElementById('chat-messages');
+            var username = "用户名"; // 这里替换为用户的注册名
+            var chatMessage = document.createElement('div');
+            chatMessage.className = 'chat-message';
+            chatMessage.textContent = username + ': ' + message;
+            chatMessages.appendChild(chatMessage);
+            messageInput.value = '';
+        });
+    </script>
+</body>
+</html>
